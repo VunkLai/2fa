@@ -1,0 +1,27 @@
+{% extends "authentication/index.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block body %}
+<div class="w-1/2 h-full rounded-md border p-8">
+  <h1 class="text-3xl pb-8">Register</h1>
+  <form name="register" action="/auth/register" method="post" >
+    <fieldset class="w-full py-4">
+      <label for="username">Username:</label>
+      <input class="border rounded-md w-full p-2"
+        type="text" id="username" name="username" required/>
+       <output for="username"/>
+    </fieldset>
+    <fieldset class="w-full py-4">
+      <label for="password">Password:</label>
+      <input class="border rounded-md w-full p-2"
+        type="password" id="password" name="password" required/>
+    </fieldset>
+    <fieldset class="text-right">
+      <button type="submit" class="rounded-md bg-green-500 px-4 py-2 text-white">Register</button>
+    </fieldset>
+  </form>
+</div>
+{% endblock%}

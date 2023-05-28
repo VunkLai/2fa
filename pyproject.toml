@@ -43,6 +43,7 @@ disable = [
   "missing-class-docstring",
   "missing-function-docstring",
   "too-few-public-methods",
+  "fixme",
 ]
 
 [tool.pylint.basic]
