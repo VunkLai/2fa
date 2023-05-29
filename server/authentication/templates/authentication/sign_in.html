@@ -1,0 +1,54 @@
+{% extends "authentication/index.html" %}
+
+{% block title %}
+Sign In
+{% endblock %}
+
+{% block body %}
+<div class="w-1/2 h-full">
+  <div class="h-fit rounded-md border-2 border-sky-600 p-8">
+    <h1 class="text-3xl pb-8">Sign In</h1>
+    <form namd="sign_in" action="/auth/sign_in" method="post" >
+      <fieldset class="w-full py-4">
+        <label for="username">Username:</label>
+        <input class="border rounded-md w-full p-2"
+          type="text" id="username" name="username" required />
+        <output for="username"/>
+      </fieldset>
+      <fieldset class="w-full py-4">
+        <label for="password">Password:</label>
+        <input class="border rounded-md w-full p-2"
+          type="password" id="password" name="password" required />
+      </fieldset>
+      <a href="#" class="text-blue-600 underline">
+        <label>Forgot password?</label>
+      </a>
+      <fieldset class="py-4">
+        <button type="submit" class="w-full rounded-full bg-green-500 px-4 py-2 cursor-pointer">
+          <label class="text-white">Sign in</label>
+        </button>
+      </fieldset>
+    </form>
+    <div class="flex items-center">
+      <div class="flex-grow h-px bg-gray-400"></div>
+      <span class="flex-shrink text-lg text-gray-500 px-4">or</span>
+      <div class="flex-grow h-px bg-gray-400"></div>
+    </div>
+    <div class="py-4">
+      <button type="button" class="w-full rounded-full border border-gray-500 px-4 py-2 disabled:cursor-not-allowed" disabled>
+        <span class="flex items-center justify-center gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" width="16px" height="16px" fill="gray">
+            <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+          </svg>
+        <label class="text-gray-500">Sign in with Google</label>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="pt-8 flex items-center justify-center gap-4">
+    <p>New to Two Factor Authenctication?</p>
+    <a href="/auth/register" class="text-blue-600 underline">Join now</a>
+  </div>
+</div>
+{% endblock%}

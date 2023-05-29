@@ -1,0 +1,30 @@
+{% extends "authentication/index.html" %}
+
+{% block title %}
+Two Factor
+{% endblock %}
+
+{% block body %}
+<div class="w-1/2 h-full">
+  <h1 class="text-3xl pb-8">Two-Factor authentication</h1>
+  <div class="h-fit rounded-md border-2 border-sky-600 p-8">
+    <form name="two_factor" action="/auth/two_factor" method="POST">
+      <fieldset class="w-full py-4">
+        <label for="code">Authentication code</label>
+        <input class="border rounded-md w-full p-2"
+            type="text" id="code" name="code" required pattern="\d{6}"/>
+      </fieldset>
+      <fieldset class="w-full py-4">
+        <button type="submit" class="w-full rounded-full bg-green-500 px-4 py-2 cursor-pointer">
+          <label class="text-white">Verify</label>
+        </button>
+      </fieldset>
+    </form>
+  </div>
+  <div class="py-4">
+    <a href="/auth/two_factor/qr_code" class="text-blue-600 underline">
+      <span>Enable two-factor authentication</span>
+    </a>
+  </div>
+</div>
+{% endblock %}
